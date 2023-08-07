@@ -147,5 +147,6 @@ export default defineConfig({
         isCustomElement: (tag) => customTags.includes(tag)
       }
     }
-  }
+  },
+  base: '/notes/'
 })
