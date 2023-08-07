@@ -1,0 +1,1 @@
+import{_ as t,v as a,b as e}from"./chunks/framework.d7971c7c.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"maths/limit.md","filePath":"maths/limit.md"}'),s={name:"maths/limit.md"};function i(r,m,n,o,c,_){return a(),e("div")}const f=t(s,[["render",i]]);export{p as __pageData,f as default};
