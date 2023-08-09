@@ -1,322 +1,333 @@
-
 # 数学符号
 
 ## 分式与根号
 
 ### $\frac{1}{x}$
 ```md
-$\frac{1}{x}$
+\frac{1}{x}
 ```
 
 ### $\sqrt[3]{x}$
 ```md
-$\sqrt[3]{x}$
+\sqrt[3]{x}
+```
+
+## 上标与下标
+
+### $a^x$
+```md
+a^x
+```
+
+### $a_1$
+```md
+a_1
 ```
 
 ## 对数
 
 ### $\log_3{x}$
 ```md
-$\log_3{x}$
+\log_3{x}
 ```
 
 ### $\ln{x}$
 ```md
-$\ln{x}$
+\ln{x}
 ```
 
 ### $\lg{x}$
 ```md
-$\lg{x}$
+\lg{x}
 ```
 
 ## 三角函数
 
 ### $\sin\,x$
 ```md
-$\sin x$
+\sin x
 ```
 
 ## 极限
 
 ### $\lim_{x\to0} f(x)$
 ```md
-$\lim_{x\to0} f(x)$
+\lim_{x\to0} f(x)
 ```
 
 ### $\lim_{x\to\infty} f(x)$
 ```md
-$\lim_{x\to\infty} f(x)$
+\lim_{x\to\infty} f(x)
 ```
 
 ## 积分
 
 ### $\int f(x)\,dx$
 ```md
-$\int f(x)\,dx$
+\int f(x)\,dx
 ```
 
 ### $\int_{a}^{b}f(x)\,dx$
 ```md
-$\int_{a}^{b}f(x)\,dx$
+\int_{a}^{b}f(x)\,dx
 ```
 
 ### $\iint_D f(x, y)\,dx\,dy$
 ```md
-$\iint_D f(x, y)\,dx\,dy$
+\iint_D f(x, y)\,dx\,dy
 ```
 
 ## 累加与连乘
 
 ### $\sum_{i=1}^{n} f(n)$
 ```md
-$\sum_{i=1}^{n} f(n)$
+\sum_{i=1}^{n} f(n)
 ```
 
 ### $\prod_{i=1}^{n} f(n)$
 ```md
-$\prod_{i=1}^{n} f(n)$
+\prod_{i=1}^{n} f(n)
 ```
 
 ## 希腊字母表
 ### $\alpha$
 ```md
-$\alpha$
+\alpha
 ```
 
 ### $\beta$
 ```md
-$\beta$
+\beta
 ```
 
 ### $\gamma$
 ```md
-$\gamma$
+\gamma
 ```
 
 ### $\delta$
 ```md
-$\delta$
+\delta
 ```
 
 ### $\Delta$
 ```md
-$\Delta$
+\Delta
 ```
 
 ### $\varepsilon$
 ```md
-$\varepsilon$
+\varepsilon
 ```
 
 ### $\zeta$
 ```md
-$\zeta$
+\zeta
 ```
 
 ### $\eta$
 ```md
-$\eta$
+\eta
 ```
 
 ### $\theta$
 ```md
-$\theta$
+\theta
 ```
 
 ### $\iota$
 ```md
-$\iota$
+\iota
 ```
 
 ### $\kappa$
 ```md
-$\kappa$
+\kappa
 ```
 
 ### $\lambda$
 ```md
-$\lambda$
+\lambda
 ```
 
 ### $\mu$
 ```md
-$\mu$
+\mu
 ```
 
 ### $\nu$
 ```md
-$\nu$
+\nu
 ```
 
 ### $\xi$
 ```md
-$\xi$
+\xi
 ```
 
 ### $\omicron$
 ```md
-$\omicron$
+\omicron
 ```
 
 ### $\pi$
 ```md
-$\pi$
+\pi
 ```
 
 ### $\rho$
 ```md
-$\rho$
+\rho
 ```
 
 ### $\sigma$
 ```md
-$\sigma$
+\sigma
 ```
 
 ### $\tau$
 ```md
-$\tau$
+\tau
 ```
 
 ### $\upsilon$
 ```md
-$\upsilon$
+\upsilon
 ```
 
 ### $\varphi$
 ```md
-$\varphi$
+\varphi
 ```
 
 ### $\chi$
 ```md
-$\chi$
+\chi
 ```
 
 ### $\Psi$
 ```md
-$\Psi$
+\Psi
 ```
 
 ### $\omega$
 ```md
-$\omega$
+\omega
 ```
 
 ## 计算符号
 
 ### $\pm$
 ```md
-$\pm$
+\pm
 ```
 
 ### $\times$
 ```md
-$\times$
+\times
 ```
 
 ### $\div$
 ```md
-$\div$
+\div
 ```
 
 ### $\infty$
 ```md
-$\infty$
+\infty
 ```
 
 ### $\varnothing$
 ```md
-$\varnothing$
+\varnothing
 ```
 
 ### $\in$
 ```md
-$\in$
+\in
 ```
 
 ### $\notin$
 ```md
-$\notin$
+\notin
 ```
 
 ### $\neq$
 ```md
-$\neq$
+\neq
 ```
 
 ### $\geqslant$
 ```md
-$\geqslant$
+\geqslant
 ```
 
 ### $\leqslant$
 ```md
-$\leqslant$
+\leqslant
 ```
 
 ### $\exists$
 ```md
-$\exists$
+\exists
 ```
 
 ### $\forall$
 ```md
-$\forall$
+\forall
 ```
 
 ### $\Longrightarrow$
 ```md
-$\Longrightarrow$
+\Longrightarrow
 ```
 
 ### $\Longleftarrow$
 ```md
-$\Longleftarrow$
+\Longleftarrow
 ```
 
 ### $\iff$
 ```md
-$\iff$
+\iff
 ```
 
 ### $\perp$
 ```md
-$\perp$
+\perp
 ```
 
 ### $\parallel$
 ```md
-$\parallel$
+\parallel
 ```
 
 ### $\sim$
 ```md
-$\sim$
+\sim
 ```
 
 ### $\triangle$
 ```md
-$\triangle$
+\triangle
 ```
 
 ### $\angle$
 ```md
-$\angle$
+\angle
 ```
 
 ### $\cdot$
 ```md
-$\cdot$
+\cdot
 ```
 
 ### $\because$
 ```md
-$\because$
+\because
 ```
 
 ### $\therefore$
 ```md
-$\therefore$
+\therefore
 ```
