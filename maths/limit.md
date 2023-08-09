@@ -16,11 +16,13 @@ $\Longrightarrow \lim \frac{f(x)}{g(x)} = \frac{A}{B}(B\neq 0)$
 
 ## 常见的等价无穷小
 ::: tip
-等价无穷小一般只能在乘除中替换，在加减中替换有时会出错
+等价无穷小一般只能在乘除中替换，在加减中替换有时会出错。
 :::
 $当x\rightarrow 0时，$
 
-$\sin x\sim\tan x\sim\arcsin x\sim\arctan x\sim\ln(1+x)\sim e^x-1\sim\ln(x+\sqrt{1+x^2})\sim x$
+$\sin x\sim\tan x\sim\arcsin x\sim\arctan x\sim x$
+
+$\ln(1+x)\sim e^x-1\sim\ln(x+\sqrt{1+x^2})\sim x$
 
 $a^x-1\sim x\ln a(a>0，a\neq1)$
 
@@ -35,3 +37,17 @@ $(1+x)^\alpha-1\sim\alpha x$
 $\tan x-x\sim x-\arctan x\sim\frac{1}{3}x^3$
 
 $x-\sin x\sim\arcsin x-x\sim\frac{1}{6}x^3$
+
+## 常用的泰勒公式（麦克劳林公式）
+::: tip
+有时候用泰勒公式展开会方便计算，特别是分母为x的幂的时候。展开后，精度大于x的幂的都不需要存在。
+:::
+$e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...+\frac{x^n}{n!}+o(x^n)$
+
+$\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}+...+(-1)^{n-1}\frac{x^{2n-1}}{(2n-1)!}+o(x^{2n-1})$
+
+$\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}+...+(-1)^n\frac{x^{2n}}{(2n)!}+o(x^{2n})$
+
+$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+...+(-1)^{n-1}\frac{x^n}{n}+o(x^n)$
+
+$(1+x)^a=1+ax+\frac{a(a-1)}{2!}x^2+...+\frac{a(a-1)...(a-n+1)}{n!}x^n+o(x^n)$
