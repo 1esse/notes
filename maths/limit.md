@@ -51,3 +51,18 @@ $\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}+...+(-1)^n\frac{x^{2n}}{(2n)!}+o(x^{2n})
 $\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+...+(-1)^{n-1}\frac{x^n}{n}+o(x^n)$
 
 $(1+x)^a=1+ax+\frac{a(a-1)}{2!}x^2+...+\frac{a(a-1)...(a-n+1)}{n!}x^n+o(x^n)$
+
+## 求函数的渐近线
+
+### 铅直渐近线
+找出函数的间断点，对x趋于函数每个间断点求极限，如果极限为无穷，则该间断点为函数的铅直渐近线。
+
+### 水平渐近线
+$对于x\rightarrow\pm\infty，f(x)\rightarrow A(B)，则y=A(B)为函数的水平渐近线$
+
+### 斜渐近线
+1. 求斜率：$k=\lim_{x\rightarrow\infty}\frac{f(x)}{x}$
+   
+2. 求截距：$b=\lim_{x\rightarrow\infty}[f(x)-kx]$
+   
+3. 得到斜渐近线$y=kx+b$
