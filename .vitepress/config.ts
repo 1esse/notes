@@ -115,7 +115,8 @@ export default defineConfig({
         text: '数学',
         items: [
           { text: '符号', link: '/maths/symbol.md' },
-          { text: '极限', link: '/maths/limit.md' }
+          { text: '极限', link: '/maths/limit.md' },
+          { text: '导数', link: '/maths/derivative.md' }
         ]
       }, 
       {
