@@ -91,6 +91,8 @@ $周期：T=\frac{\pi}{|\omega|}，最小正周期为\pi$
 
 $定义域：x\neq\frac{\pi}{2}+k\pi，值域：[-\infty,\infty]$
 
+$求导：(\tan x)'=(\frac{\sin x}{\cos x})'=\frac{\cos^2x+\sin^2x}{\cos^2x}=\frac{1}{\cos^2x}=\sec^2x$
+
 <img src="../images/maths/tan.jpg" style="width: 400px; height: 300px" />
 :::
 
