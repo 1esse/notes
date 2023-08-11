@@ -115,8 +115,11 @@ export default defineConfig({
         text: '数学',
         items: [
           { text: '符号', link: '/maths/symbol.md' },
+          { text: '三角函数', link: '/maths/trigonometric.md' },
           { text: '极限', link: '/maths/limit.md' },
-          { text: '导数', link: '/maths/derivative.md' }
+          { text: '导数', link: '/maths/derivative.md' },
+          { text: '不定积分', link: '/maths/indefinite_integral.md' },
+          { text: '定积分', link: '/maths/definite_integral.md' },
         ]
       }, 
       {
