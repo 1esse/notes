@@ -104,13 +104,13 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
-        text: '例子',
-        items: [
-          { text: 'api', link: '/api-examples.md' },
-          { text: 'markdown', link: '/markdown-examples.md' }
-        ]
-      }, 
+      // {
+      //   text: '例子',
+      //   items: [
+      //     { text: 'api', link: '/api-examples.md' },
+      //     { text: 'markdown', link: '/markdown-examples.md' }
+      //   ]
+      // }, 
       {
         text: '数学',
         items: [

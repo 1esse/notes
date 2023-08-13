@@ -33,7 +33,7 @@ $求导：(\csc x)'=(\frac{1}{\sin x})'=\frac{-\cos x}{\sin^2x}=-\frac{1}{\sin x
 
 ### arcsin
 :::info 反正弦函数
-$正弦函数的反函数，y=\sin\theta，则\theta=\arcsin y$
+$正弦函数的反函数，y=a\sin\theta，则\theta=\arcsin\frac{y}{a}$
 
 $定义域：[-1, 1]，值域：[-\frac{\pi}{2},\frac{\pi}{2}]$
 
@@ -72,7 +72,7 @@ $求导：(\sec x)'=(\frac{1}{\cos x})'=\frac{\sin x}{\cos^2x}=\frac{1}{\cos x}\
 
 ### arccos
 :::info 反余弦函数
-$余弦函数的反函数，y=\cos\theta，则\theta=\arccos y$
+$余弦函数的反函数，y=a\cos\theta，则\theta=\arccos\frac{y}{a}$
 
 $定义域：[-1, 1]，值域：[0,\pi]$
 
@@ -111,7 +111,7 @@ $求导：(\cot x)'=(\frac{1}{\tan x})'=(\frac{\cos x}{\sin x})'=\frac{-\sin^2x-
 
 ### arctan（奇）
 :::info 反正切函数
-$正切函数的反函数，y=\tan\theta，则\theta=\arctan y$
+$正切函数的反函数，y=a\tan\theta，则\theta=\arctan\frac{y}{a}$
 
 $定义域：[-\infty, \infty]，值域：[-\frac{\pi}{2},\frac{\pi}{2}]$
 
@@ -119,3 +119,77 @@ $求导：(\arctan x)'=\frac{1}{1+x^2}$
 
 <img src="../images/maths/arctan.png" style="width: 400px; height: 250px" />
 :::
+
+## 三角转换
+
+### 倒数关系
+$\sin x\cdot\csc x=1$
+
+$\cos x\cdot\sec x=1$
+
+$\tan x\cdot\cot x=1$
+
+### 商数关系
+$\tan x=\frac{\sin x}{\cos x}$
+
+$\cot x=\frac{\cos x}{\sin x}$
+
+### 平方关系
+$\sin^2x+\cos^2x=1\qquad(1)$
+
+$对(1)式两边同时除以\cos^2x，得\tan^2x+1=\sec^2x$
+
+$对(1)式两边同时除以\sin^2x，得1+\cot^2x=\csc^2x$
+
+### 和角公式与差角公式
+$\sin(a+b)=\sin a\cdot\cos b+\cos a\cdot\sin b$
+
+$\sin(a-b)=\sin a\cdot\cos b-\cos a\cdot\sin b$
+
+$\cos(a+b)=\cos a\cdot\cos b-\sin a\cdot\sin b$
+
+$\cos(a-b)=\cos a\cdot\cos b+\sin a\cdot\sin b$
+
+$\tan(a+b)=\frac{\tan a+\tan b}{1-\tan a\cdot\tan b}$
+
+$\tan(a-b)=\frac{\tan a-\tan b}{1+\tan a\cdot\tan b}$
+
+### 二倍角公式
+:::tip 
+可通过和角公式与差角公式推出
+:::
+$\sin2a=2\sin a\cdot\cos a$
+
+$\cos2a=\cos^2a-\sin^2a=2\cos^2a-1=1-2\sin^2a$
+
+$\tan2a=\frac{2\tan a}{1-\tan^2a}$
+
+### 半角公式
+:::tip
+可通过二倍角公式推出
+:::
+$(\sin\frac{a}{2})^2=\frac{1-\cos a}{2}$
+
+$(\cos\frac{a}{2})^2=\frac{1+\cos a}{2}$
+
+### 和差化积公式
+$\sin a+\sin b=2\sin\frac{a+b}{2}\cos\frac{a-b}{2}$
+
+$\sin a-\sin b=2\cos\frac{a+b}{2}\sin\frac{a-b}{2}$
+
+$\cos a+\cos b=2\cos\frac{a+b}{2}\cos\frac{a-b}{2}$
+
+$\cos a-\cos b=-2\sin\frac{a+b}{2}\sin\frac{a-b}{2}$
+
+### 积化和差公式
+$\sin a\cos b=\frac{1}{2}[\sin(a+b)+\sin(a-b)]$
+
+$\cos a\sin b=\frac{1}{2}[\sin(a+b)-\sin(a-b)]$
+
+$\cos a\cos b=\frac{1}{2}[\cos(a+b)+\cos(a-b)]$
+
+$\sin a\sin b=-\frac{1}{2}[\cos(a+b)-\cos(a-b)]$
+
+
+
+
