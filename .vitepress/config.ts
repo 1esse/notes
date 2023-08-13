@@ -120,6 +120,9 @@ export default defineConfig({
           { text: '导数', link: '/maths/derivative.md' },
           { text: '不定积分', link: '/maths/indefinite_integral.md' },
           { text: '定积分', link: '/maths/definite_integral.md' },
+          { text: '重积分', link: '/maths/multiple_integral.md' },
+          { text: '微分方程', link: '/maths/equations.md' },
+          { text: '多元函数', link: '/maths/multivariate_function.md' },
         ]
       }, 
       {

@@ -331,3 +331,8 @@ a_1
 ```md
 \therefore
 ```
+
+### $\partial$
+```md
+\partial
+```
