@@ -124,6 +124,7 @@ export default defineConfig({
           { text: '微分方程', link: '/maths/equations.md' },
           { text: '多元函数', link: '/maths/multivariate_function.md' },
           { text: '中值定理', link: '/maths/mean_value_theorem.md' },
+          { text: '行列式', link: '/maths/determinant.md' }
         ]
       }, 
       {
