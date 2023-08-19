@@ -442,7 +442,7 @@ $
     1 & 3\\
     1 & 1
   \end{array}
-\right|
+\right|\cdots\cdots
 $
 
 $
@@ -474,7 +474,7 @@ $
     0 & 8\\
     9 & 10
   \end{array}
-\right|
+\right|+\cdots+\cdots
 $
 
 #### 例题
