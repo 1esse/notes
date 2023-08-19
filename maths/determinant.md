@@ -259,8 +259,8 @@ $
 拆开后的第二个行列式中，第一行与第二行成比例，值为0
 :::
 
-## 例题
-### 纯数字计算
+### 例题
+#### 纯数字计算
 $
 D=\left|
     \begin{array}{cccc}
@@ -316,3 +316,402 @@ $
 $
 
 $=215$
+
+## 按行（列）展开
+### 余子式
+$
+\left|
+  \begin{array}{cccc}
+    1 & 1 & 0 & 3\\
+    1 & 1 & 1 & 1\\
+    2 & 2 & 3 & 4\\
+    5 & 5 & 6 & 6
+  \end{array}
+\right|\xrightarrow{去掉第三行，第二列}M_{32}=\left|
+  \begin{array}{cccc}
+    1 & 0 & 3\\
+    1 & 1 & 1\\
+    5 & 6 & 6
+  \end{array}
+\right|
+$
+
+### 代数余子式
+:::tip
+对比余子式，前面增加了符号
+:::
+$
+A_{32}=(-1)^{3+2}\left|
+  \begin{array}{cccc}
+    1 & 0 & 3\\
+    1 & 1 & 1\\
+    5 & 6 & 6
+  \end{array}
+\right|
+$
+
+:::tip 定理：按行（列）展开
+$按行：D=a_{i1}A_{i1}+a_{i2}A_{i2}+\cdots+a_{in}A_{in}$
+
+$按列：D=a_{1j}A_{1j}+a_{2j}A_{2j}+\cdots+a_{nj}A_{nj}$
+
+其中，a是行列式元素，A是元素（自己）对应的代数余子式
+
+$D=\sum某行（列）元素\times自己的代数余子式$
+:::
+
+### 例子
+$
+\left|
+  \begin{array}{cccc}
+    1 & 1 & 2\\
+    0 & 1 & 0\\
+    2 & 3 & 5
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{按第一行展开}1\times(-1)^{1+1}\left|
+  \begin{array}{cccc}
+    1 & 0\\
+    3 & 5
+  \end{array}
+\right|+1\times(-1)^{1+2}\left|
+  \begin{array}{cccc}
+    0 & 0\\
+    2 & 5
+  \end{array}
+\right|+2\times(-1)^{1+3}\left|
+  \begin{array}{cccc}
+    0 & 1\\
+    2 & 3
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{按第二行展开}1\times(-1)^{2+2}\left|
+  \begin{array}{cccc}
+    1 & 2\\
+    2 & 5
+  \end{array}
+\right|
+$
+
+可以看出，**行列式取0多的行或列展开**，会更方便计算
+
+### 异乘变零
+:::tip 定理
+某行元素与另一行元素的代数余子式乘积之和为0 
+:::
+
+$
+\left|
+  \begin{array}{cccc}
+    1 & 1 & 2 & 3\\
+    0 & 0 & 8 & 9\\
+    2 & 5 & 5 & 4\\
+    9 & 9 & 9 & 10
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{第4行元素与第1行元素的代数余子式相乘}9\times A_{11}+9\times A_{12}+9\times A_{13}+10\times A_{14}=0
+$
+
+### 拉普拉斯k阶子式
+:::tip 定理
+取定k行，由k行元素组成的所有k阶子式与代数余子式乘积之和等于D。
+:::
+$
+\left|
+  \begin{array}{cccc}
+    1 & 3 & 4 & 4\\
+    1 & 1 & 2 & 5\\
+    1 & 1 & 0 & 8\\
+    9 & 9 & 9 & 10
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{取第12行，第12列展开}二阶子式=\left|
+  \begin{array}{cccc}
+    1 & 3\\
+    1 & 1
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{取第12行，第12列展开}余子式=\left|
+  \begin{array}{cccc}
+    0 & 8\\
+    9 & 10
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{取第12行，第12列展开}代数余子式=(-1)^{1+2+1+2}\left|
+  \begin{array}{cccc}
+    0 & 8\\
+    9 & 10
+  \end{array}
+\right|
+$
+
+$
+=\left|
+  \begin{array}{cccc}
+    1 & 3\\
+    1 & 1
+  \end{array}
+\right|\times(-1)^{1+2+1+2}\left|
+  \begin{array}{cccc}
+    0 & 8\\
+    9 & 10
+  \end{array}
+\right|
+$
+
+#### 例题
+$
+\left|
+  \begin{array}{cccc}
+    1 & 2 & 0 & 0 & 0\\
+    3 & 4 & 0 & 0 & 0\\
+    1 & 2 & 3 & 4 & 5\\
+    1 & 1 & 1 & 1 & 1\\
+    6 & 6 & 8 & 3 & 1
+  \end{array}
+\right|=\left|
+  \begin{array}{cccc}
+    1 & 2\\
+    3 & 4
+  \end{array}
+\right|\times(-1)^{1+2+1+2}\left|
+  \begin{array}{cccc}
+    3 & 4 & 5\\
+    1 & 1 & 1\\
+    8 & 3 & 1
+  \end{array}
+\right|
+$
+
+## 行列式相乘
+:::tip 定理
+两个**同阶**行列式相乘，用一个行列式的n行元素分别乘以另一个行列式的1~n列元素，先相乘再相加，得到新的行列式的n行1~n列的元素。
+
+**行列式乘法与矩阵乘法相同**
+:::
+$
+\left|
+  \begin{array}{cccc}
+    1 & 2 & 1\\
+    2 & 1 & 1\\
+    1 & 1 & 2
+  \end{array}
+\right|\times\left|
+  \begin{array}{cccc}
+    1 & 0 & 2\\
+    0 & 1 & 0\\
+    2 & 0 & 1
+  \end{array}
+\right|=\left|
+  \begin{array}{cccc}
+    3 & 2 & 3\\
+    4 & 1 & 5\\
+    5 & 1 & 4
+  \end{array}
+\right|
+$
+
+## 特殊行列式
+
+### 三叉形行列式
+$
+\left|
+  \begin{array}{cccc}
+    1+a_1 & 1 & 1 & \cdots & 1\\
+    1 & 1+a_2 & 1 & \cdots & 1\\
+    \cdots & \cdots & \cdots & \cdots & \cdots\\
+    1 & 1 & 1 & \cdots & 1+a_n
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{加一行，加一列（加边法）}\left|
+  \begin{array}{cccc}
+    1 & 1 & 1 & 1 & \cdots & 1\\
+    0 & 1+a_1 & 1 & 1 & \cdots & 1\\
+    0 & 1 & 1+a_2 & 1 & \cdots & 1\\
+    \cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+    0 & 1 & 1 & 1 & \cdots & 1+a_n
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{每一行乘以-1加到下一行}\left|
+  \begin{array}{cccc}
+    1 & 1 & 1 & 1 & \cdots & 1\\
+    -1 & a_1 & & & \cdots &\\
+    -1 & & a_2 & & \cdots &\\
+    \cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+    -1 & & & & \cdots & a_n
+  \end{array}
+\right|
+$
+
+$
+\xlongequal{每一列乘以\frac{1}{a_{列}}加到第一列}\left|
+  \begin{array}{cccc}
+    1+\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n} & 1 & 1 & 1 & \cdots & 1\\
+    0 & a_1 & & & \cdots &\\
+    0 & & a_2 & & \cdots &\\
+    \cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+    0 & & & & \cdots & a_n
+  \end{array}
+\right|
+$
+
+$=(1+\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n})a_1a_2\cdots a_n$
+
+### 范德蒙德行列式
+$
+\left|
+  \begin{array}{cccc}
+  1&1&1&\cdots&1\\
+  x_1&x_2&x_3&\cdots&x_n\\
+  \cdots&\cdots&\cdots&\cdots&\cdots\\
+  x_1^{n-2}&x_2^{n-2}&x_3^{n-2}&\cdots&x_n^{n-2}&\\
+  x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\cdots&x_n^{n-1}&
+  \end{array}
+\right|=\prod_{1\leqslant j<i\leqslant n}(x_i-x_j)
+$
+
+$
+\left|
+  \begin{array}{cccc}
+    \cdots & \cdots & \cdots & \cdots\\
+    a & b & c & d\\
+    \cdots & \cdots & \cdots & \cdots\\
+    \cdots & \cdots & \cdots & \cdots\\
+  \end{array}
+\right|=(b-a)(c-a)(d-a)(c-b)(d-b)(d-c)
+$
+
+### 反对称行列式
+:::tip 定义
+1. 主对角线全为0
+2. $上下位置对应成相反数a_{ij}=-a_{ji}$
+
+$
+\left|
+  \begin{array}{cccc}
+    0 & 1 & -2\\
+    -1 & 0 & 3\\
+    2 & -3 & 0
+  \end{array}
+\right|
+$
+:::
+
+:::tip 性质
+如果是反对称行列式，且是奇数阶，则D=0
+
+$D=\left|
+  \begin{array}{cccc}
+    0 & a & b\\
+    -a & 0 & c\\
+    -b & -c & 0
+  \end{array}
+\right|=(-1)^{3}\left|
+  \begin{array}{cccc}
+    0 & -a & -b\\
+    a & 0 & -c\\
+    b & c & 0
+  \end{array}
+\right|=-D^T=-D
+$
+
+$D=-D\rightarrow D=0$
+:::
+
+### 对称行列式
+:::tip 定义
+1. 主对角线无要求
+2. $上下位置对应相等a_{ij}=a_{ji}$
+
+$
+\left|
+  \begin{array}{cccc}
+    1 & 1 & 2\\
+    1 & 2 & -3\\
+    2 & -3 & 3
+  \end{array}
+\right|
+$
+:::
+
+## cramer克莱姆法则（了解）
+:::tip
+给定方程组与未知量相等，且D不等于0，才可以用克莱姆法则。
+:::
+$\begin{cases}
+  x_1+x_2+x_3=1\\
+  x_1-x_2+5x_3=6\\
+  -x_1+x_2+6x_3=9
+\end{cases}$
+
+提取系数作行列式：
+
+$D=\left|
+  \begin{array}{cccc}
+    1 & 1 & 1\\
+    1 & -1 & 5\\
+    -1 & 1 & 6
+  \end{array}
+\right|$
+
+$D_1=\left|
+  \begin{array}{cccc}
+    1 & 1 & 1\\
+    6 & -1 & 5\\
+    9 & 1 & 6
+  \end{array}
+\right|$
+
+$D_2=\left|
+  \begin{array}{cccc}
+    1 & 1 & 1\\
+    1 & 6 & 5\\
+    -1 & 9 & 6
+  \end{array}
+\right|$
+
+$D_3=\left|
+  \begin{array}{cccc}
+    1 & 1 & 1\\
+    1 & -1 & 6\\
+    -1 & 1 & 9
+  \end{array}
+\right|$
+
+$则x_j=\frac{D_j}{D}$
+
+:::tip 齐次方程组
+$\begin{cases}
+  x_1+x_2+x_3=0\\
+  x_1-x_2+5x_3=0\\
+  -x_1+x_2+6x_3=0
+\end{cases}$
+
+当齐次方程组D不等于0时，只有0解。
+
+当齐次方程（方程数=未知数）有非零解的充要条件为D=0.
+:::
