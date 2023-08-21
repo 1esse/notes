@@ -336,3 +336,8 @@ a_1
 ```md
 \partial
 ```
+
+### $\cong$
+```md
+\cong
+```

@@ -431,7 +431,7 @@ $A^T=\left[\begin{matrix}
   A_3^T&A_6^T\\
 \end{matrix}\right]$
 
-### 逆矩阵
+## 逆矩阵
 $
 H=\left[\begin{matrix}
   A&C\\
@@ -456,4 +456,189 @@ $
   &B^{-1}&\\
   &&C^{-1}
 \end{matrix}\right]\quad
+$
+
+## 初等变换
+### 行(列)变换
+:::tip 以下内容列同理
+:::
+$行变换\begin{cases}
+  交换两行\left(\begin{matrix}
+  1&1&1\\
+  2&2&2\\
+  3&3&3
+  \end{matrix}\right)\rightarrow\left(\begin{matrix}
+  2&2&2\\
+  1&1&1\\
+  3&3&3
+  \end{matrix}\right)\\
+  用k(k\neq 0)乘某一行\left(\begin{matrix}
+  1&1&1\\
+  2&2&2\\
+  3&3&3
+  \end{matrix}\right)\xrightarrow{第一行乘6}\left(\begin{matrix}
+  6&6&6\\
+  2&2&2\\
+  3&3&3
+  \end{matrix}\right)\\
+  某一行的l倍加到另一行\left(\begin{matrix}
+  1&1&1\\
+  2&2&2\\
+  3&3&3
+  \end{matrix}\right)\xrightarrow{第一行-3倍加到第三行}\left(\begin{matrix}
+  1&1&1\\
+  2&2&2\\
+  0&0&0
+  \end{matrix}\right)
+\end{cases}$
+
+:::tip 本质
+对行进行初等变换，用箭头连接而不是等号，因为本质是对矩阵的变化
+:::
+
+:::tip 定理
+任何矩阵都可通过初等变换化为标准形
+:::
+
+### 等价
+#### 定义
+A矩阵经初等变换得到B矩阵，则两个矩阵等价
+
+$记作A\cong B$
+
+#### 性质
+1. $反身性：A\cong A$
+
+2. $对称性：A\cong B\rightarrow B\cong A$
+
+3. $A\cong B，B\cong C\rightarrow A\cong C$
+
+4. $任何矩阵\cong 标准形$
+
+### 初等方阵
+:::tip 定义
+对E做一次初等变换得到的矩阵
+
+1. 初等方阵均可逆
+2. 其逆矩阵也是初等方阵
+3. 其转置矩阵也是初等方阵
+:::
+
+1. 行变换初等方阵
+
+:::info 行列式值
+$|E(i,j)|=-1$
+:::
+
+:::info 逆矩阵
+$E^{-1}(i,j)=E(i,j)$
+:::
+
+2. k乘以某一行初等方阵
+
+:::info 行列式值
+$|E(i(k))|=k$
+:::
+
+:::info 逆矩阵
+$E^{-1}(i(k))=E(i(\frac{1}{k}))$
+:::
+
+3. 某一行的l倍加到另一行初等方阵
+
+:::info 行列式
+$|E(i,j(l))|=1$
+:::
+
+:::info 逆矩阵
+$E^{-1}(i,j(l))=E(i,j(-l))$
+:::
+
+
+:::tip 定理
+1. 用初等方阵**左乘**一个矩阵A，相当于对A实施相同的**行变换**
+
+2. 用初等方阵**右乘**一个矩阵A，相当于对A实施相同的**列变换**
+
+3. 对于任意A，存在初等矩阵P...，Q...，使得
+
+$P_s\cdots P_1AQ_1\cdots Q_t为标准形$
+
+4. $A可逆\iff A的标准形为E$
+
+5. $A可逆\iff A=P_1\cdots P_s$
+:::
+
+:::tip 推论
+1. $A，B等价\iff存在可逆初等矩阵P，Q，使得PAQ=B$
+:::
+
+### 求逆矩阵
+#### 初等行变换法
+$Q_1Q_2\cdots Q_tA=E$
+
+$Q_1Q_2\cdots Q_tE=A^{-1}$
+
+$可知，(A,E)\xrightarrow{只做行变换}(E,A^{-1})$
+
+例子：
+
+$
+(A,E)=\left(
+  \begin{matrix}
+  1&0&1&\vdots&1&0&0\\
+  2&1&0&\vdots&0&1&0\\
+  -3&2&-5&\vdots&0&0&1
+  \end{matrix}
+\right)
+$
+
+$
+\rightarrow\left(
+  \begin{matrix}
+  1&0&1&1&0&0\\
+  0&1&-2&-2&1&0\\
+  0&2&-2&3&0&1
+  \end{matrix}
+\right)
+$
+
+$
+\rightarrow\left(
+  \begin{matrix}
+  1&0&1&1&0&0\\
+  0&1&-2&-2&1&0\\
+  0&0&2&7&-2&1
+  \end{matrix}
+\right)
+$
+
+$
+\rightarrow\left(
+  \begin{matrix}
+  1&0&0&-\frac{5}{2}&1&-\frac{1}{2}\\
+  0&1&0&5&-1&1\\
+  0&0&2&7&-2&1
+  \end{matrix}
+\right)
+$
+
+$
+\rightarrow\left(
+  \begin{matrix}
+  1&0&0&\vdots&-\frac{5}{2}&1&-\frac{1}{2}\\
+  0&1&0&\vdots&5&-1&1\\
+  0&0&1&\vdots&\frac{7}{2}&-1&\frac{1}{2}
+  \end{matrix}
+\right)
+$
+
+$
+A^{-1}=\left(
+  \begin{matrix}
+  -\frac{5}{2}&1&-\frac{1}{2}\\
+  5&-1&1\\
+  \frac{7}{2}&-1&\frac{1}{2}
+  \end{matrix}
+\right)
 $
