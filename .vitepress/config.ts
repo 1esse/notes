@@ -100,7 +100,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '笔记', link: '/markdown-examples' }
+      { text: '笔记', link: '/maths/symbol.md' }
     ],
 
     sidebar: [
@@ -130,7 +130,10 @@ export default defineConfig({
       }, 
       {
         text: '数据结构',
-        items: []
+        items: [
+          { text: '基本概念和术语', link: '/dataStructures/basicConcepts.md' },
+          { text: '线性表', link: '/dataStructures/list.md' },
+        ]
       }, 
       {
         text: '政治',
