@@ -642,3 +642,163 @@ A^{-1}=\left(
   \end{matrix}
 \right)
 $
+
+## 秩
+非零子式的最高阶数，就是矩阵的**秩**
+
+$记作r(A)=r，同时r(0)=0$
+
+$若A_{m\times n}，0\leqslant r(A)\leqslant \min{\{m,n\}}$
+
+$r(A)=r(A^T)$
+
+$r(A)=min{\{m,n\}}满秩\begin{cases}
+  r(A)=m，代表取了所有行，叫行满秩\\
+  r(A)=n，代表取了所有列，叫列满秩
+\end{cases}$
+
+$r(A)<min{\{m,n\}}降秩$
+
+$如果A是方阵，满秩\iff A可逆\iff |A|\neq 0$
+
+$若A_{m\times n}，P为m阶可逆方阵，Q为n阶可逆方阵，则：$
+
+$r(A)=r(PA)=r(AQ)=r(PAQ)$
+
+### k阶子式
+:::tip 定义
+一个矩阵任取k行k列的行列式，就是k阶子式
+
+$\left(
+  \begin{matrix}
+  1&1&1&1\\
+  2&3&4&5\\
+  6&7&8&9
+  \end{matrix}
+\right)\xrightarrow{取第1,2行，第3,4列}\left|
+  \begin{array}{cccc}
+    1&1\\
+    4&5
+  \end{array}
+\right|$
+:::
+
+### 阶梯形✨
+1. 若有零行，零行在非零行的下边
+2. 左起的首非零元素左边零的个数随行数增加而严格增加 
+3. $r(A)=非零行的行数$
+4. 初等变换不改变矩阵的秩，所以求秩时一般先用初等（行）变换化成阶梯型
+
+#### 行简化阶梯型✨✨✨
+1. 非零行的首非零元素是1
+2. 首非零元素所在列的其余元素是0
+
+## 向量
+$由n个数a_1\cdots a_n组成的有序数组(a_1,a_2\,\cdots,a_n)$
+
+### 向量间的线性关系
+#### 线性组合
+$\beta,\alpha_1,\alpha_2\cdots\alpha_n是m维向量$
+
+$若存在K_1,K_2\cdots K_n，使$
+
+$\beta=K_1\alpha_1+K_2\alpha_2+\cdots+K_n\alpha_n$
+
+1. 零向量可有任意向量组表示
+
+$0 = 0\times\alpha_1+0\times\alpha_2+\cdots+0\times\alpha_n$
+
+2. 向量组中任一向量可由向量组表示
+
+$\alpha_1 = 1\times\alpha_1+0\times\alpha_2+\cdots+0\times\alpha_n$
+
+3. $任一向量可由\epsilon_1=(1,0,\cdots,0)，\epsilon_2=(0,1,\cdots,0)，\epsilon_n=(0,0,\cdots,1)表示$
+
+$(1,2,3)=1\times(1,0,0)+2\times(0,1,0)+3\times(0,0,1)$
+
+4. $\beta=(-3,2,-4), \alpha_1=(1,0,1), \alpha_2(2,1,0), \alpha_3=(-1,1,-2)$
+
+$解：设\beta=K_1\alpha_1+K_2\alpha_2+K_3\alpha_3$
+
+$(-3,2,-4)=K_1(1,0,1)+K_2(2,1,0)+K_3(-1,1,-2)$
+
+$\begin{cases}
+  K_1+2K_2-K_3=-3\\
+  K_2+K_3=2\\
+  K_1-2K_3=-4
+\end{cases}\begin{cases}
+  K_1=2\\
+  K_2=-1\\
+  K_3=3
+\end{cases}$
+
+$\beta=2\alpha_1-\alpha_2+3\alpha_3$
+
+:::tip
+$是否线性组合\iff方程组有解$
+:::
+
+#### 向量组的等价
+:::tip 定义
+两个向量组可以相互表示，记作
+
+$\{\alpha_1\cdots\alpha_m\}\cong\{\beta1\cdots\beta_n\}$
+:::
+1. $反身性：\{\alpha_1\cdots\alpha_m\}\cong\{\alpha_1\cdots\alpha_m\}$
+2. $对称性：\{\alpha_1\cdots\alpha_m\}\cong\{\beta1\cdots\beta_n\}\quad\{\beta1\cdots\beta_n\}\cong\{\alpha_1\cdots\alpha_m\}$
+3. $传递性：\{\alpha_1\cdots\alpha_m\}\cong\{\beta1\cdots\beta_n\}\quad\{\beta1\cdots\beta_n\}\cong\{\gamma_1\cdots\gamma_s\}\quad\{\alpha_1\cdots\alpha_m\}\cong\{\gamma_1\cdots\gamma_s\}$
+
+### 线性相关与线性无关
+:::tip 线性相关定义
+$\alpha_1\cdots\alpha_n是n个m维向量，$
+
+$若存在一组不全为0的K_1\cdots K_n，存在$
+
+$K_1\alpha_1+K_2\alpha_2+\cdots+K_n\alpha_n=0$
+
+$\alpha_1\cdots\alpha_n是线性相关$
+:::
+
+:::danger 线性无关定义
+$\begin{cases}
+  1.不是线性相关\\
+  2.找不到一组不全为0的K_1\cdots K_n使(*)成立\\
+  3.(*)成立，K_1\cdots K_n必全为0
+\end{cases}$
+:::
+
+**结论**
+1. 向量组中两向量成比例，则此向量组一定线性相关
+2. 含零向量的任意向量组必线性相关
+3. 一个零向量必线性相关
+4. 一个非零向量必线性无关
+5. $一个向量\alpha线性相关\iff\alpha=0$
+6. $部分组\alpha_1\cdots\alpha_r线性相关，则整体组\alpha_1\cdots\alpha_r\alpha_{r+1}\cdots\alpha_s线性相关$
+7. $整体组线性无关，则部分组线性无关$
+8. 线性无关的向量组，接长向量组也线性无关。线性相关的向量组，截短向量组也线性相关
+9. $n个n维向量（向量个数=向量维数），行列式D\neq 0\iff线性无关，D=0\iff线性相关$
+
+**举例**
+$求(1,0,-1),(-1,-1,2),(2,3,-5)是否线性相关$
+
+$解：设K_1,K_2,K_3，K_1\alpha_1+K_2\alpha_2+K_3\alpha_3=0$
+
+$K_1(1,0,-1)+K_2(-1,-1,2)+K_3(2,3,-5)=0$
+
+$\begin{cases}
+  K_1-K_2+2K_3=0\\
+  -K_2+3K_3=0\\
+  -K_1+2K_2-5K_3=0
+\end{cases}\begin{cases}
+  K_1=K_2\\
+  K_2=3K_3
+\end{cases}\rightarrow K_3=1,K_1=1,K_2=3$
+
+#### 定理
+1. $\alpha_1\cdots\alpha_s线性相关\iff至少一个向量可由其余向量表示$
+2. $\alpha_1\cdots\alpha_s线性无关，\alpha_1\cdots\alpha_s\beta线性相关，\beta可由\alpha_1\cdots\alpha_s唯一表示$
+3. $\alpha_1\cdots\alpha_s线性无关，可由\beta_1\cdots\beta_t表示，则s\leqslant t$
+
+#### 推论
+1. $m>n，m个n维向量线性相关，n+1个n维向量线性相关$
+2. $两个等价的线性无关组含向量的个数是相同的$
