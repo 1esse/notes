@@ -150,6 +150,11 @@ a_1
 \lambda
 ```
 
+### $\Lambda$
+```md
+\Lambda
+```
+
 ### $\mu$
 ```md
 \mu

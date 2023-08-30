@@ -15,6 +15,22 @@ $其中，m是行数，n是列数，a_{mn}是元素$
 $矩阵一般用ABCE表示，记作A_{m\times n}，表示m行n列的矩阵$
 :::
 
+$等价：A、B同型，存在可逆矩阵P、Q，使得PAQ=B$
+
+:::tip 提示
+相似、正交相似、合同都是等价
+:::
+
+$相似：A、B同阶方阵，存在可逆矩阵P，使得P^{-1}AP=B$
+
+$正交相似：A、B同阶方阵，存在可逆正交矩阵P，使得P^{-1}AP=B$
+
+:::tip 提示
+$因为正交矩阵P^T=P^{-1}，所以正交矩阵既相似也合同$
+:::
+
+$合同：A、B同阶方阵，存在可逆矩阵P，使得P^TAP=B$
+
 ## 与行列式的区别
 1. 本质：**行列式**是一个数，**矩阵**是数表
 2. 符号：**行列式**是| |，**矩阵**是( )或[ ]
@@ -802,3 +818,530 @@ $\begin{cases}
 #### 推论
 1. $m>n，m个n维向量线性相关，n+1个n维向量线性相关$
 2. $两个等价的线性无关组含向量的个数是相同的$
+
+### 向量组的秩
+#### 定义
+极大线性无关组所含向量的个数，记作
+$r(\alpha_1\alpha_2\cdots\alpha_n)$
+
+**注**
+1. $0\leqslant r(\alpha_1\alpha_2\cdots\alpha_n)\leqslant \min{\{向量的个数，维数\}}$
+2. $\alpha_1\alpha_2\cdots\alpha_n无关\iff r=n$
+3. $\alpha_1\alpha_2\cdots\alpha_n相关\iff r<n$
+
+#### 极大线性无关组
+:::tip 定义
+$\alpha_1\alpha_2\alpha_3\alpha_4\alpha_5的部分组\alpha_1\alpha_2$
+1. $\alpha_1\alpha_2线性无关$
+2. $每个向量都可由\alpha_1\alpha_2表示$
+:::
+
+求向量组的极大线性无关组
+1. 不管向量组是行或列，均按列构成矩阵
+2. 只做初等行变换化成行简化阶梯型
+3. 首非零元所在列做极大线性无关组
+4. 其余向量表示系数直接写出来
+
+$\left[\begin{matrix}
+  1&2&-2&3\\
+  -2&-4&4&-6\\
+  2&8&-2&0\\
+  -1&0&3&-6
+\end{matrix}\right]\xrightarrow{初等行变换}\left[\begin{matrix}
+  1&0&-3&6\\
+  0&1&\frac{1}{2}&-\frac{3}{2}\\
+  0&0&0&0\\
+  0&0&0&0
+\end{matrix}\right]$
+
+$\alpha_1, \alpha_2是极大线性无关组$
+
+$\alpha_3=-3\alpha_1+\frac{1}{2}\alpha_2$
+
+$\alpha_4=6\alpha_1-\frac{3}{2}\alpha_2$
+
+### 行秩与列秩
+向量分割矩阵的行与列形成的向量组。
+
+**行秩=列秩=矩阵的秩r(A)**
+
+$r(AB)\leqslant\min{\{r(A),r(B)\}}$
+
+**初等行变换不改变矩阵列向量组的线性关系**
+
+## 线性方程组
+### 有解判定
+$\begin{cases}
+  x_1+x_2+x_3=1\\
+  x_1-x_2-x_3=-3\\
+  2x_1+9x_2+10x_3=11
+\end{cases}$
+
+$\xrightarrow{系数矩阵}A=\left(\begin{matrix}
+  1&1&1\\
+  1&-1&-1\\
+  2&9&10
+\end{matrix}\right)$
+
+$\xrightarrow{增广系数矩阵}\overline{A}=\left(\begin{matrix}
+  1&1&1&\vdots&1\\
+  1&-1&-1&\vdots&-3\\
+  2&9&10&\vdots&11
+\end{matrix}\right)$
+
+$\left(\begin{matrix}
+  1&0&0&\vdots&1\\
+  0&1&0&\vdots&2\\
+  0&0&1&\vdots&3
+\end{matrix}\right)\begin{cases}
+  x_1=1\\
+  x_2=2\\
+  x_3=3
+\end{cases}，唯一解，r(A)=r(\overline{A})=3=未知量个数$
+
+$\left(\begin{matrix}
+  1&0&1&\vdots&5\\
+  0&1&1&\vdots&9\\
+  0&0&0&\vdots&0
+\end{matrix}\right)\begin{cases}
+  x_1=5-x_3\\
+  x_2=9-x_3
+\end{cases}，无穷解，r(A)=r(\overline{A})=2<3$
+
+$\left(\begin{matrix}
+  1&0&1&\vdots&3\\
+  0&1&0&\vdots&4\\
+  0&0&0&\vdots&1
+\end{matrix}\right)\begin{cases}
+  x_1+x_3=3\\
+  x_2=4\\
+  0=1
+\end{cases}，无解，r(A)=2\neq r(\overline{A})=3$
+
+**结论**
+1. $当r(A)=r(\overline{A})，有解\begin{cases}
+  r(A)=r(\overline{A})=n，唯一解\\
+  r(A)=r(\overline{A})<n，无穷多解
+\end{cases}$
+
+2. $当r(A)\neq r(\overline{A})，无解$ 
+
+3. 其中，m为方程个数，n为未知量个数
+
+**解题步骤**
+1. $写出\overline{A}$
+2. $只做初等行变换，化为阶梯形$
+3. $看r(A)和r(\overline{A})是否相等$
+4. 化为行简化阶梯形，不管零行，非零行的首非零元(1)留在左边，其余变量挪到右边，得一般解。如果化简化阶梯形的时候带参数，参数不能放分目，因为不能确定参数是否为0。
+
+### 齐次线性方程组
+方程等号右边都是0，就是齐次方程。（齐次方程一定有解，至少有零解）
+
+$r(A)=r(\overline{A})有解\begin{cases}
+  =n，唯一解\\
+  <n，无穷多解
+\end{cases}$
+
+1. $r(A)=r(\overline{A})=n，有唯一的零解\iff r(A)=n$
+2. $有非零解\iff r(A)<n$
+3. $方程个数m<未知量个数n，有非零解。r(A)\leqslant\min{\{m,n\}}=m<n$
+4. $方程个数=未知数个数，有非零解\iff |A|=0$
+5. $AB=0,r(A)+r(B)\leqslant n$
+
+### 方程组解的结构
+#### 齐次
+1. $\eta_1\cdots\eta_s线性无关$
+2. $任何解都可由\eta_1\cdots\eta_s表示$
+3. $解题个数n-r(A)$
+
+**解题例子**
+$A=()\xrightarrow{初等行变换}\left(\begin{matrix}
+  1&0&-\frac{9}{4}&-\frac{3}{4}&\frac{1}{4}\\
+  0&1&\frac{3}{4}&-\frac{7}{4}&\frac{5}{4}\\
+  0&0&0&0&0
+\end{matrix}\right)\begin{cases}
+  x_1=\frac{9}{4}x_3+\frac{3}{4}x_4-\frac{1}{4}x_5\\
+  x_2=-\frac{3}{4}x_3+\frac{7}{4}x_4-\frac{5}{4}x_5
+\end{cases}$
+
+$x_3,x_4,x_5是自由未知量$
+
+$令\left(\begin{matrix}
+  x_3\\
+  x_4\\
+  x_5
+\end{matrix}\right)取\left(\begin{matrix}
+  1\\
+  0\\
+  0
+\end{matrix}\right),\left(\begin{matrix}
+  0\\
+  1\\
+  0
+\end{matrix}\right),\left(\begin{matrix}
+  0\\
+  0\\
+  1
+\end{matrix}\right)$
+
+$\eta_1=\left(\begin{matrix}
+  \frac{9}{4}\\
+  -\frac{3}{4}\\
+  1\\
+  0\\
+  0
+\end{matrix}\right),\eta_2=\left(\begin{matrix}
+  \frac{3}{4}\\
+  \frac{7}{4}\\
+  0\\
+  1\\
+  0
+\end{matrix}\right),\eta_3=\left(\begin{matrix}
+  -\frac{1}{4}\\
+  -\frac{5}{4}\\
+  0\\
+  0\\
+  1
+\end{matrix}\right)$
+
+$\eta_1,\eta_2,\eta3是基础解系$
+
+#### 非齐次
+1. $\alpha_1,\alpha_2是Ax=b的解，\alpha_1-\alpha_2是Ax=0的解$
+2. $\alpha_0是Ax=b的解，\eta是Ax=0的解，\alpha_0+\eta是Ax=b的解$
+3. $\alpha_0是Ax=b的一个解（特解），\eta是Ax=0的通解$
+
+$\eta=C_1\eta_1+C_2\eta_2+\cdots+C_{n-r}\eta_{n-r}$
+
+$\eta_1,\eta_2,\cdots,\eta_{n-r}是Ax=0基础解系$
+
+$\alpha_0+C_1\eta_1+C_2\eta_2+\cdots+C_{n-r}\eta_{n-r}是Ax=b的通解$
+
+**解题例子**
+1. $写出\overline{A}，只做初等行变换化为行简化阶梯形$
+2. $找出Ax=b的特解（自由未知量均取0）$
+3. $找出Ax=0的基础解系$
+
+$\overline{A}=\left(\begin{matrix}
+  1&5&-1&-1&\vdots&-1\\
+  1&-2&1&3&\vdots&3\\
+  3&8&-1&1&\vdots&1\\
+  1&-9&3&7&\vdots&7
+\end{matrix}\right)\xrightarrow{行}\left(\begin{matrix}
+  1&0&\frac{3}{7}&\frac{13}{7}&\vdots&\frac{13}{7}\\
+  0&1&-\frac{2}{7}&-\frac{4}{7}&\vdots&-\frac{4}{7}\\
+  0&0&0&0&\vdots&0\\
+  0&0&0&0&\vdots&0\\
+\end{matrix}\right)\begin{cases}
+  x_1=\frac{13}{7}-\frac{3}{7}x_3-\frac{13}{7}x_4\\
+  x_2=-\frac{4}{7}+\frac{2}{7}x_3-\frac{4}{7}x_4\\
+\end{cases}$
+
+$x_3,x_4为自由未知量$
+
+$取\left(\begin{matrix}
+  x_3\\
+  x_4
+\end{matrix}\right)=\left(\begin{matrix}
+  0\\
+  0
+\end{matrix}\right),\alpha_0=\left(\begin{matrix}
+  \frac{13}{7}\\
+  -\frac{4}{7}\\
+  0\\
+  0
+\end{matrix}\right)是Ax=b的一个特解$
+
+$导出组的同解方程组为\begin{cases}
+  x_1=-\frac{3}{7}x_3-\frac{13}{7}x_4\\
+  x_2=\frac{2}{7}x_3-\frac{4}{7}x_4\\
+\end{cases}$
+
+$x_3,x_4为自由未知量$
+
+$令\left(\begin{matrix}
+  x_3\\
+  x_4
+\end{matrix}\right)取\left(\begin{matrix}
+  1\\
+  0
+\end{matrix}\right)\left(\begin{matrix}
+  0\\
+  1
+\end{matrix}\right)$
+
+$\eta_1=\left(\begin{matrix}
+  -\frac{3}{7}\\
+  \frac{2}{7}\\
+  1\\
+  0
+\end{matrix}\right),\eta_2=\left(\begin{matrix}
+  -\frac{13}{7}\\
+  \frac{4}{7}\\
+  0\\
+  1
+\end{matrix}\right)$
+
+$通解为\alpha_0+C_1\eta_1+C_2\eta_2（代入即可）$
+
+## 特征值与特征向量
+:::tip 定义
+$A为n阶方阵，若存在数\lambda，非零列向量\alpha，使得A\alpha=\lambda\alpha$
+
+$则称\lambda为特征值，\alpha为对应于\lambda的特征向量$
+
+$\lambda可以为0，\alpha不能为0$
+:::
+
+1. $\lambda是A的特征值，\alpha是\lambda对应的特征向量，C\alpha也是\lambda的特征向量(C\neq 0)$
+2. $\alpha_1,\alpha_2是\lambda的特征向量，C_1\alpha_1+C_2\alpha_2是\lambda的特征向量$
+3. $计算|\lambda E-A|=0的行列式求出\lambda，代入(\lambda E-A)\alpha=0求出特征向量$
+
+**解题例子**
+
+$A=\left(\begin{matrix}
+  1&-2&2\\
+  -2&-2&4\\
+  2&4&-2
+\end{matrix}\right)$
+
+$|\lambda E-A|=\left|\begin{array}{cccc}
+  \lambda-1&2&-2\\
+  2&\lambda+2&-4\\
+  -2&-4&\lambda+2
+\end{array}\right|$
+
+$=\left|\begin{array}{cccc}
+  \lambda-1&2&-2\\
+  2&\lambda+2&-4\\
+  -2&\lambda-2&\lambda-2
+\end{array}\right|$
+
+$=(\lambda-2)\left|\begin{array}{cccc}
+  \lambda-1&2&-2\\
+  2&\lambda+2&-4\\
+  0&1&1
+\end{array}\right|$
+
+$=(\lambda-2)(\lambda-2)(\lambda+7)$
+
+$\lambda_1=-7,\lambda_2=\lambda_3=2$
+
+$1) \lambda_1=-7, \lambda E-A=\left(\begin{matrix}
+  -8&2&-2\\
+  2&-5&-4\\
+  -2&-4&-5
+\end{matrix}\right)\xrightarrow{行简化}()$
+
+$同解方程组\begin{cases}
+  x_1=...\\
+  x_2=...\\
+  \cdots
+\end{cases}，x_1,x_2为自由未知量$
+
+$\cdots\cdots\cdots$
+
+$解出C_1\left(\begin{cases}
+  1\\
+  2\\
+  -2
+\end{cases}\right)C_1\neq 0$
+
+$\cdots\cdots\cdots$
+
+### 基本性质
+1. $A和A^T有相同的特征值✨✨$
+2. $n个特征值\lambda_1,\lambda_2,\cdots,\lambda_n✨✨✨$
+
+$\sum_{i=1}^{n}\lambda_i=\sum_{i=1}^{n}a_{ii}$
+
+所有特征值之和等于主对角线之和，叫迹tr(A)
+
+$\lambda_1\lambda_2\cdots\lambda_n=|A|$
+
+特征值有一个为0，A不可逆
+
+3. $互不相同的特征值\lambda_1,\lambda_2,\cdots,\lambda_m对应的特征向量\alpha_1,\alpha_2,\cdots,\alpha_m线性无关$
+
+4. $k\lambda是kA的特征值，\lambda^2是A^2的特征值$
+
+5. $\frac{1}{\lambda}是A^{-1}的特征值，\frac{1}{\lambda}|A|是A^*的特征值$
+
+## 相似矩阵
+:::tip 定义
+$A,B为n阶方阵，存在n阶可逆方阵P，使得P^{-1}AP=B，A\sim B$
+:::
+
+1. $反身性：A\sim A$
+2. $对称性：A\sim B\rightarrow B\sim A$
+3. $传递性：A\sim B，B\sim C\rightarrow A\sim C$
+
+### 性质
+1. $A\sim B, A,B有相同的特征值，|A|=|B|，tr(A)=tr(B)$
+2. $A\sim B, A可逆\iff B可逆，A^{-1}\sim B^{-1}$
+3. $A\sim B, A^m\sim B^m$
+
+### 与对角形相似的条件
+:::tip 定理
+$A\sim \Lambda\iff A有n个线性无关的特征向量$
+
+$A\sim \Lambda\iff r_i重特征根，基础解系有r_i个解$
+
+推论
+
+$A有n个互异的特征值，A\sim \Lambda=\left(
+  \begin{matrix}
+    \lambda_1&&\\
+    &\cdots&\\
+    &&\lambda_n
+  \end{matrix}
+\right)$
+:::
+
+### 实对称矩阵的对角化
+#### 内积
+$\alpha=\left(\begin{matrix}
+  a_1\\
+  a_2\\
+  \cdots\\
+  a_n
+\end{matrix}\right),\beta=\left(\begin{matrix}
+  b_1\\
+  b_2\\
+  \cdots\\
+  b_n
+\end{matrix}\right),(\alpha.\beta)=a_1b_1+a_2b_2+\cdots+a_nb_n$
+
+$=[列]\alpha^T\beta=[行]\alpha\beta^T$
+
+1. $(\alpha.\alpha)\geqslant 0$
+2. $(\alpha.\beta)=(\beta.\alpha)$
+3. $(k\alpha.\beta)=k(\alpha.\beta)$
+4. $(k\alpha.k\beta)=k^2(\alpha.\beta)$
+5. $(\alpha+\beta.\gamma)=(\alpha.\gamma)+(\beta.\gamma)$
+
+#### 长度(范数，模)
+$||\alpha||=\sqrt{(\alpha.\alpha)}$
+
+$||\alpha||^2=(\alpha.\alpha)$
+
+$单位向量：||\alpha||=1(\frac{1}{||\alpha||}\alpha=1)$
+
+性质
+1. $||\alpha||\geqslant 0$
+2. $||k\alpha||=|k|\cdot||\alpha||$
+3. $|(\alpha.\beta)|\leqslant||\alpha||\cdot||\beta||$
+4. $||\alpha+\beta||\leqslant||\alpha||+||\beta||$
+
+#### 正交(垂直)
+$(\alpha.\beta)=0,\alpha\perp\beta$
+
+正交向量组（不含零向量）：
+
+$\alpha_1\cdots\alpha_n两两正交$
+
+标准正交向量组：
+$\begin{cases}
+  (\alpha_i,\alpha_i)=1\\
+  (\alpha_i,\alpha_j)=0\\
+\end{cases}$
+
+:::tip 定理
+$\alpha_1\cdots\alpha_s为正交向量组，\alpha_1\cdots\alpha_s线性无关$
+:::
+
+#### 施密特正交化
+$给一组线性无关的\alpha_1\cdots\alpha_s$
+
+$求与之等价的正交向量组\beta_1\cdots\beta_s$
+
+$\beta_1=\alpha_1$
+
+$\beta_2=\alpha_2-\frac{(\alpha_2.\beta_1)}{\beta_1.\beta_1}\beta_1$
+
+$\beta_3=\alpha_3-\frac{(\alpha_3.\beta_1)}{\beta_1.\beta_1}\beta_1-\frac{(\alpha_3.\beta_2)}{\beta_2.\beta_2}\beta_2$
+
+ 
+#### 正交矩阵
+$A为n阶方阵，A^TA=E$
+1. $A正交：|A|=1或-1，|A^T||A|=1，|A|^2=1$
+2. $A正交：A^{-1}=A^T，且A^{-1}和A^T均为正交矩阵$
+3. $A,B正交：AB也正交$
+4. $A正交，\alpha,\beta为列向量：(A\alpha.A\beta)=(\alpha.\beta)$
+
+:::tip 定理
+$A正交\iff A的列(行)向量组是标准正交向量组$
+:::
+
+**实对称矩阵定理**
+实对称矩阵A的不同特征值对应的特征向量正交
+
+## 二次型
+1. $二次型\rightarrow矩阵表达式$
+2. 
+$x_1^2+2x_1x_2+x_2^2-x_2x_3+2x_3^2-2x_1x_3$
+
+$(x_1,x_2,x_3)\left(\begin{matrix}
+  1&1&-1\\
+  1&1&-\frac{1}{2}\\
+  -1&-\frac{1}{2}&2
+\end{matrix}\right)\left(\begin{matrix}
+  x_1\\
+  x_2\\
+  x_3
+\end{matrix}\right)$
+
+转化方法：
+1. 平方项的系数直接做主对角元素
+2. 交叉项的系数除以2，放到两个对称的相应位置上
+
+### 标准形
+只有平方项的二次型就是标准形。
+
+### 线性替换
+X=CY
+
+### 合同
+:::tip 定义
+$A,B为n阶方阵，存在可逆矩阵C，使得C^TAC=B$
+:::
+
+1. $反身性：A\simeq A$
+2. $对称性：A\simeq B\rightarrow B\simeq A$
+3. $传递性：A\simeq B, B\simeq C\rightarrow A\simeq C$
+4. $A\simeq B，则r(A)=r(B)$
+5. $A\simeq B，则A^T=A\iff B^T=B$
+6. $A\simeq B，A,B可逆，A^{-1}\simeq B^{-1}$
+7. $A\simeq B，则A^T\simeq B^T$
+
+### 化二次型为标准形
+#### 配方法
+$先配x_1，再配x_2....$
+
+如果题目给的都是交叉性，需要进行变量替换，一般是：
+$\begin{cases}
+  x_1=y_1-y_2\\
+  x_2=y_1+y_2\\
+  x_3=y_3\\
+  x_4=y_4\\
+  \cdots
+\end{cases}$
+
+$2x_1x_2-4x_1x_3+10x_2x_3\rightarrow 2y_1^2-2y_2^2+6y_1y_3+14y_2y_3$
+
+#### 初等变换法
+1. 对A，E做同样的初等列变换
+2. 只对A做相应的初等行变换
+3. A化成对角形矩阵之时，E化成的就是C
+
+### 规范形
+$y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots y_r^2$
+
+r(A)=1或-1的总数
+
+正项数：正惯性指数
+
+合同：正惯性指数与负惯性指数相同
+
+
+# 我累了，毁灭吧😭
