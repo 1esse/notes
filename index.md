@@ -8,18 +8,18 @@ hero:
   tagline: 一战打基础，二战985，三战清北复
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /maths/极限.md
+      text: 数学
+      link: /maths/trigonometric.md
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 数据结构
+      link: /dataStructures/basicConcepts.md
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 定理一
+    details: 莫欺少年穷
+  - title: 定理二
+    details: 莫欺中年穷
+  - title: 定理三
+    details: 莫欺老年穷
 ---
 
