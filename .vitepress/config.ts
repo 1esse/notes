@@ -133,7 +133,8 @@ export default defineConfig({
         items: [
           { text: '基本概念和术语', link: '/dataStructures/basicConcepts.md' },
           { text: '线性表', link: '/dataStructures/list.md' },
-          { text: '排序', link: '/dataStructures/sorts.md' }
+          { text: '排序', link: '/dataStructures/sorts.md' },
+          { text: '树', link: '/dataStructures/tree.md' }
         ]
       }, 
       {
