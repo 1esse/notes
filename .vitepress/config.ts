@@ -139,7 +139,9 @@ export default defineConfig({
       }, 
       {
         text: '政治',
-        items: []
+        items: [
+          { text: '选择题重点汇总', link: '/politics/selectImportant.md' }
+        ]
       }, 
       {
         text: '英语',
