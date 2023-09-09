@@ -22,3 +22,14 @@ $先r后\theta$
 $积分区域D可以用\alpha\leqslant\theta\leqslant\beta，\varphi_1(\theta)\leqslant r\leqslant \varphi_2(\theta)表示，$
 
 $\iint_D f(x,y)\,d\sigma=\int_\alpha^\beta d\theta\int_{\varphi_1(\theta)}^{\varphi_2(\theta)}f(r\cos\theta,r\sin\theta)rdr$
+
+适用对象：积分区域和园有关
+
+### 极直互化
+$x=r\cos\theta$
+$y=r\sin\theta$
+
+### 轮换对称性
+如果积分区域D关于y=x对称，则
+
+$\iint_D f(x,y)dxdy=\iint_D f(y,x)dxdy=\frac{1}{2}\iint_D[f(x,y)+f(y,x)]dxdy$

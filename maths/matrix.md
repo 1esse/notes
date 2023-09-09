@@ -447,7 +447,35 @@ $A^T=\left[\begin{matrix}
   A_3^T&A_6^T\\
 \end{matrix}\right]$
 
-## 逆矩阵
+### 逆矩阵
+$
+A=\left[\begin{matrix}
+  B&0\\
+  0&C
+\end{matrix}\right]
+$
+
+$
+A^{-1}=\left[\begin{matrix}
+  B^{-1}&0\\
+  0&C^{-1}
+\end{matrix}\right]
+$
+
+$
+B=\left[\begin{matrix}
+  0&C\\
+  D&0
+\end{matrix}\right]
+$
+
+$
+B^{-1}=\left[\begin{matrix}
+  0&D^{-1}\\
+  C^{-1}&0
+\end{matrix}\right]
+$
+
 $
 H=\left[\begin{matrix}
   A&C\\
@@ -680,6 +708,10 @@ $如果A是方阵，满秩\iff A可逆\iff |A|\neq 0$
 $若A_{m\times n}，P为m阶可逆方阵，Q为n阶可逆方阵，则：$
 
 $r(A)=r(PA)=r(AQ)=r(PAQ)$
+
+$若AB=0，则r(A)+r(B)\leqslant n$
+
+$r(AB)\leqslant \min{\{r(A),r(B)\}}$
 
 ### k阶子式
 :::tip 定义
@@ -1210,31 +1242,31 @@ $\alpha=\left(\begin{matrix}
   b_2\\
   \cdots\\
   b_n
-\end{matrix}\right),(\alpha.\beta)=a_1b_1+a_2b_2+\cdots+a_nb_n$
+\end{matrix}\right),(\alpha,\beta)=a_1b_1+a_2b_2+\cdots+a_nb_n$
 
 $=[列]\alpha^T\beta=[行]\alpha\beta^T$
 
-1. $(\alpha.\alpha)\geqslant 0$
-2. $(\alpha.\beta)=(\beta.\alpha)$
-3. $(k\alpha.\beta)=k(\alpha.\beta)$
-4. $(k\alpha.k\beta)=k^2(\alpha.\beta)$
-5. $(\alpha+\beta.\gamma)=(\alpha.\gamma)+(\beta.\gamma)$
+1. $(\alpha,\alpha)\geqslant 0$
+2. $(\alpha,\beta)=(\beta,\alpha)$
+3. $(k\alpha,\beta)=k(\alpha,\beta)$
+4. $(k\alpha,k\beta)=k^2(\alpha,\beta)$
+5. $(\alpha+\beta,\gamma)=(\alpha,\gamma)+(\beta,\gamma)$
 
 #### 长度(范数，模)
-$||\alpha||=\sqrt{(\alpha.\alpha)}$
+$||\alpha||=\sqrt{(\alpha,\alpha)}$
 
-$||\alpha||^2=(\alpha.\alpha)$
+$||\alpha||^2=(\alpha,\alpha)$
 
 $单位向量：||\alpha||=1(\frac{1}{||\alpha||}\alpha=1)$
 
 性质
 1. $||\alpha||\geqslant 0$
 2. $||k\alpha||=|k|\cdot||\alpha||$
-3. $|(\alpha.\beta)|\leqslant||\alpha||\cdot||\beta||$
+3. $|(\alpha,\beta)|\leqslant||\alpha||\cdot||\beta||$
 4. $||\alpha+\beta||\leqslant||\alpha||+||\beta||$
 
 #### 正交(垂直)
-$(\alpha.\beta)=0,\alpha\perp\beta$
+$(\alpha,\beta)=0,\alpha\perp\beta$
 
 正交向量组（不含零向量）：
 
@@ -1257,9 +1289,9 @@ $求与之等价的正交向量组\beta_1\cdots\beta_s$
 
 $\beta_1=\alpha_1$
 
-$\beta_2=\alpha_2-\frac{(\alpha_2.\beta_1)}{\beta_1.\beta_1}\beta_1$
+$\beta_2=\alpha_2-\frac{(\alpha_2,\beta_1)}{\beta_1,\beta_1}\beta_1$
 
-$\beta_3=\alpha_3-\frac{(\alpha_3.\beta_1)}{\beta_1.\beta_1}\beta_1-\frac{(\alpha_3.\beta_2)}{\beta_2.\beta_2}\beta_2$
+$\beta_3=\alpha_3-\frac{(\alpha_3,\beta_1)}{\beta_1,\beta_1}\beta_1-\frac{(\alpha_3,\beta_2)}{\beta_2,\beta_2}\beta_2$
 
  
 #### 正交矩阵
@@ -1267,7 +1299,7 @@ $A为n阶方阵，A^TA=E$
 1. $A正交：|A|=1或-1，|A^T||A|=1，|A|^2=1$
 2. $A正交：A^{-1}=A^T，且A^{-1}和A^T均为正交矩阵$
 3. $A,B正交：AB也正交$
-4. $A正交，\alpha,\beta为列向量：(A\alpha.A\beta)=(\alpha.\beta)$
+4. $A正交，\alpha,\beta为列向量：(A\alpha.A\beta)=(\alpha,\beta)$
 
 :::tip 定理
 $A正交\iff A的列(行)向量组是标准正交向量组$
