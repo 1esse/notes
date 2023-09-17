@@ -713,6 +713,12 @@ $若AB=0，则r(A)+r(B)\leqslant n$
 
 $r(AB)\leqslant \min{\{r(A),r(B)\}}$
 
+$r(A^*)=\begin{cases}
+  n\quad r(A)=n\\
+  1\quad r(A)=n-1\\
+  0\quad r(A)<n-1
+\end{cases}$
+
 ### k阶子式
 :::tip 定义
 一个矩阵任取k行k列的行列式，就是k阶子式
